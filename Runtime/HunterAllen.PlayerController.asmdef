@@ -1,0 +1,14 @@
+{
+    "name": "HunterAllen.PlayerController",
+    "rootNamespace": "HunterAllen.PlayerController",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
