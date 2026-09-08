@@ -1,3 +1,4 @@
+[DISCLAIMER](https://gist.github.com/HunterAllen06/100914a4aeb15675c98dd71db1362fa6)
 # PlayerController
 **System is a heavy W.I.P!**
 Simple player controller with built in stair/slope support.
