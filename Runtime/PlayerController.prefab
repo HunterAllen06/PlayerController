@@ -75,7 +75,7 @@ MonoBehaviour:
   SpringHeight: 0.55
   SpringRaycastDistance: 1
   SpringRadius: 0.9
-  DirectionBias: 0.2
+  DirectionBias: 0.45
   DirectionBiasSprintMultiplier: 1.5
   GroundLayer:
     serializedVersion: 2

@@ -95,10 +95,6 @@ namespace HunterAllen.Player
             if (hits == 0) return;
 
             // Select hit closest to the feet
-            // This shit EATS all the ram - 1.0 kb GC allocation :(
-            // RaycastHit hit = _groundHitResults.OrderBy(x => (new Vector2(x.point.x, x.point.z) - new Vector2(Collider.transform.position.x, Collider.transform.position.z)).magnitude).ToArray()[0];
-            
-            // New method
             RaycastHit groundHit = default;
             float previousHorizontalDistance = SpringRaycastDistance;
             for (int i = 0; i < hits; i++)
@@ -111,6 +107,8 @@ namespace HunterAllen.Player
                 }
                 if (groundHit.point == default)
                 {
+                    // Because of the direction bias setting, I'd like to do a separate raycast for the
+                    // default grouind hit instead of the first hit in the array
                     groundHit = _groundHitResults[i];
                     continue;
                 }
@@ -120,10 +118,11 @@ namespace HunterAllen.Player
                 var hitHeight = ray.origin.y - hit.point.y; // Collider.transform.position.y - Collider.height - SpringHeight;
 
                 if (
+                    hitHeight > SpringHeight && // Don't set hit if below 'feet'
                     hitHeight < MaxStepHeight + 0.05f && // Step height
                     Vector3.Dot(hit.normal, Vector3.up) > _maxSlopeDot && // Slope
                     currentHorizontalDistance < previousHorizontalDistance) // Closest to player horizontally
-                    //hit.distance < groundHit.distance &&
+                                                                            //hit.distance < groundHit.distance &&
                 {
                     groundHit = hit;
                 }
