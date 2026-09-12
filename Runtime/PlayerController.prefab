@@ -69,9 +69,9 @@ MonoBehaviour:
   DefaultSpeed: 3
   SprintSpeed: 8
   CrouchSpeedMultiplier: 0.5
-  SpringForce: 25000
+  SpringForce: 500
   SpringForceSprintMultiplier: 1.8
-  SpringDamp: 2500
+  SpringDamp: 50
   SpringHeight: 0.55
   SpringRaycastDistance: 1
   SpringRadius: 0.9
